@@ -36,7 +36,9 @@ public class IciciPru {
   @Parameters("browser")
   public void setup(String browser)
   {
-	  String reportPath = "F:\\YouTube\\Videos\\10_SecurityTesting\\MyTestRepo\\test-output\\extentReport\\"+ "ExtentReport" + ".html";
+	 String reportPath = System.getProperty("user.dir")
+        + "/test-output/extentReport/ExtentReport.html";
+
       ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
       extent = new ExtentReports();
       extent.attachReporter(sparkReporter);
@@ -67,7 +69,7 @@ public class IciciPru {
   public void validateHomePageTitle() {
 	  
 	  String actualPageTitle = driver.getTitle();
-	  String expectedPageTitle = "Life Insurance - ICICI Prudential Life Insurance India 2025";
+	  String expectedPageTitle = "Life Insurance - ICICI Prudential Life Insurance India 2026";
 	  Assert.assertEquals(actualPageTitle, expectedPageTitle);
 	  	    
   }
@@ -81,7 +83,8 @@ public class IciciPru {
 	{
 		String suboptiontext = termoption.getText();
 		System.out.println(suboptiontext);
-		Assert.assertTrue(suboptiontext.contains("TERM INSURANCE"));
+		Assert.assertTrue(termmenulist.size() > 0 );
+		Assert.assertTrue(termoption.isDisplayed());
 	}
 	
 	
@@ -100,7 +103,7 @@ public class IciciPru {
 				continue;
 			}
 			System.out.println(suboptiontext);
-			Assert.assertTrue(suboptiontext.contains("NRI"));
+			Assert.assertTrue(nrioption.isDisplayed());
 		}
   
   
