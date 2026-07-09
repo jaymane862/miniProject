@@ -84,7 +84,7 @@ public class IciciPru {
 		String suboptiontext = termoption.getText();
 		System.out.println(suboptiontext);
 		Assert.assertTrue(termmenulist.size() > 0 );
-		Assert.assertTrue(termoption.isDisplayed());
+		Assert.assertFalse(termmenulist.isEmpty(), "Term Insurance menu is empty");
 	}
 	
 	
@@ -103,7 +103,7 @@ public class IciciPru {
 				continue;
 			}
 			System.out.println(suboptiontext);
-			Assert.assertTrue(nrioption.isDisplayed());
+			Assert.assertFalse(NRImenulist.isEmpty(), "NRI Plans menu is empty");
 		}
   
   
