@@ -5,7 +5,7 @@ pipeline {
        stage('Checkout Code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/tricity-selenium/miniprojectwork.git'
+                    url: 'https://github.com/jaymane862/miniProject.git'
             }
         }
         stage('Run Tests') {
